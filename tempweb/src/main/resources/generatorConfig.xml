@@ -24,7 +24,7 @@
               
         <!-- domainObjectName是表对应的实体类名,  tableName是对应的表名-->  
         <!-- table可以配置多个,enable*几个参数是为了自动生成一些额外的sql操作,可以关闭-->  
-        <table domainObjectName="HtmlFile" tableName="ntkohtmlfile"  
+        <table domainObjectName="User" tableName="user"  
             enableCountByExample="false" enableUpdateByExample="false"  
             enableDeleteByExample="false" enableSelectByExample="false"  
             selectByExampleQueryId="false"> 

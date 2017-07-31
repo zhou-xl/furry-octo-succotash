@@ -25,7 +25,7 @@
     </filter-mapping>  
     <!-- Spring监听器 -->  
     <listener>  
-        <listener-class>org.springframework.web.util.Log4jConfigListener</listener-class> 
+        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>  
     </listener>  
     <!-- 防止Spring内存溢出监听器 -->  
     <listener>  
@@ -52,4 +52,4 @@
         <welcome-file>/index.jsp</welcome-file>  
     </welcome-file-list>  
   
-</web-app>  
+</web-app>
