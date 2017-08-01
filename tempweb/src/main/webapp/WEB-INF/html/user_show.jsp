@@ -9,8 +9,6 @@
 
 <script type="text/javascript">
 
-console.info("${userList}")
-
 </script>
 
 </head>
