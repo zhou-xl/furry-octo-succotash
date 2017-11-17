@@ -96,16 +96,28 @@
 					<artifactId>tomcat7-maven-plugin</artifactId>
 					<version>2.2</version>
 					<configuration>
+						<path>/tempweb</path>
+               			<port>8080</port>	
 						<uriEncoding>UTF-8</uriEncoding>
 						<url>http://localhost:8080/manager</url>
 						<server>tomcat7</server>
-						<warSourceDirectory>src/main/webapp</warSourceDirectory>
-						<contextReloadable>false</contextReloadable>
+<!-- 						<warSourceDirectory>src/main/webapp</warSourceDirectory> -->
+<!-- 						<contextReloadable>false</contextReloadable> -->
 					</configuration>
 				</plugin>
 
 			</plugins>
 		</pluginManagement>
+		<resources>
+            <!--编译之后包含xml-->
+            <resource>
+                <directory>src/main/java</directory>
+                <includes>
+                    <include>**/*.xml</include>
+                </includes>
+                <filtering>true</filtering>
+            </resource>
+        </resources>
 	</build>
 
 
