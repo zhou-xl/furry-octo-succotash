@@ -11,49 +11,49 @@ public class JsonToMapTest {
 	 @SuppressWarnings("rawtypes")
 	public static void main(String[] args){  
 		  
-	        String str = "{\"0\":\"zhangsan\",\"1\":\"lisi\",\"2\":\"wangwu\",\"3\":\"maliu\"}";  
-	        //µÚÒ»ÖÖ·½Ê½  
+		 String str = "{\"0\":\"zhangsan\",\"1\":\"lisi\",\"2\":\"wangwu\",\"3\":\"maliu\"}";  
+	        //ç¬¬ä¸€ç§æ–¹å¼  
 	        Map maps = (Map)JSON.parse(str);  
-	        System.out.println("Õâ¸öÊÇÓÃJSONÀàÀ´½âÎöJSON×Ö·û´®!!!");  
+	        System.out.println("è¿™ä¸ªæ˜¯ç”¨JSONç±»æ¥è§£æJSONå­—ç¬¦ä¸²!!!");  
 	        for (Object map : maps.entrySet()){  
 	            System.out.println(((Map.Entry)map).getKey()+"     " + ((Map.Entry)map).getValue());  
 	        }  
-	        //µÚ¶şÖÖ·½Ê½  
+	        //ç¬¬äºŒç§æ–¹å¼  
 	        Map mapTypes = JSON.parseObject(str);  
-	        System.out.println("Õâ¸öÊÇÓÃJSONÀàµÄparseObjectÀ´½âÎöJSON×Ö·û´®!!!");  
+	        System.out.println("è¿™ä¸ªæ˜¯ç”¨JSONç±»çš„parseObjectæ¥è§£æJSONå­—ç¬¦ä¸²!!!");  
 	        for (Object obj : mapTypes.keySet()){  
-	            System.out.println("keyÎª£º"+obj+"ÖµÎª£º"+mapTypes.get(obj));  
+	            System.out.println("keyä¸ºï¼š"+obj+"å€¼ä¸ºï¼š"+mapTypes.get(obj));  
 	        }  
-	        //µÚÈıÖÖ·½Ê½  
+	        //ç¬¬ä¸‰ç§æ–¹å¼  
 	        Map mapType = JSON.parseObject(str,Map.class);  
-	        System.out.println("Õâ¸öÊÇÓÃJSONÀà,Ö¸¶¨½âÎöÀàĞÍ£¬À´½âÎöJSON×Ö·û´®!!!");  
+	        System.out.println("è¿™ä¸ªæ˜¯ç”¨JSONç±»,æŒ‡å®šè§£æç±»å‹ï¼Œæ¥è§£æJSONå­—ç¬¦ä¸²!!!");  
 	        for (Object obj : mapType.keySet()){  
-	            System.out.println("keyÎª£º"+obj+"ÖµÎª£º"+mapType.get(obj));  
+	            System.out.println("keyä¸ºï¼š"+obj+"å€¼ä¸ºï¼š"+mapType.get(obj));  
 	        }  
-	        //µÚËÄÖÖ·½Ê½  
+	        //ç¬¬å››ç§æ–¹å¼  
 	        /** 
-	         * JSONObjectÊÇMap½Ó¿ÚµÄÒ»¸öÊµÏÖÀà 
+	         * JSONObjectæ˜¯Mapæ¥å£çš„ä¸€ä¸ªå®ç°ç±» 
 	         */  
 	        Map json = (Map) JSONObject.parse(str);  
-	        System.out.println("Õâ¸öÊÇÓÃJSONObjectÀàµÄparse·½·¨À´½âÎöJSON×Ö·û´®!!!");  
+	        System.out.println("è¿™ä¸ªæ˜¯ç”¨JSONObjectç±»çš„parseæ–¹æ³•æ¥è§£æJSONå­—ç¬¦ä¸²!!!");  
 	        for (Object map : json.entrySet()){  
 	            System.out.println(((Map.Entry)map).getKey()+"  "+((Map.Entry)map).getValue());  
 	        }  
-	        //µÚÎåÖÖ·½Ê½  
+	        //ç¬¬äº”ç§æ–¹å¼  
 	        /** 
-	         * JSONObjectÊÇMap½Ó¿ÚµÄÒ»¸öÊµÏÖÀà 
+	         * JSONObjectæ˜¯Mapæ¥å£çš„ä¸€ä¸ªå®ç°ç±» 
 	         */  
 	        JSONObject jsonObject = JSONObject.parseObject(str);  
-	        System.out.println("Õâ¸öÊÇÓÃJSONObjectµÄparseObject·½·¨À´½âÎöJSON×Ö·û´®!!!");  
+	        System.out.println("è¿™ä¸ªæ˜¯ç”¨JSONObjectçš„parseObjectæ–¹æ³•æ¥è§£æJSONå­—ç¬¦ä¸²!!!");  
 	        for (Object map : json.entrySet()){  
 	            System.out.println(((Map.Entry)map).getKey()+"  "+((Map.Entry)map).getValue());  
 	        }  
-	        //µÚÁùÖÖ·½Ê½  
+	        //ç¬¬å…­ç§æ–¹å¼  
 	        /** 
-	         * JSONObjectÊÇMap½Ó¿ÚµÄÒ»¸öÊµÏÖÀà 
+	         * JSONObjectæ˜¯Mapæ¥å£çš„ä¸€ä¸ªå®ç°ç±» 
 	         */  
 	        Map mapObj = JSONObject.parseObject(str,Map.class);  
-	        System.out.println("Õâ¸öÊÇÓÃJSONObjectµÄparseObject·½·¨²¢Ö´ĞĞ·µ»ØÀàĞÍÀ´½âÎöJSON×Ö·û´®!!!");  
+	        System.out.println("è¿™ä¸ªæ˜¯ç”¨JSONObjectçš„parseObjectæ–¹æ³•å¹¶æ‰§è¡Œè¿”å›ç±»å‹æ¥è§£æJSONå­—ç¬¦ä¸²!!!");  
 	        for (Object map: json.entrySet()){  
 	            System.out.println(((Map.Entry)map).getKey()+"  "+((Map.Entry)map).getValue());  
 	        }  
