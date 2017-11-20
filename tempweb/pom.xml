@@ -97,27 +97,40 @@
 					<version>2.2</version>
 					<configuration>
 						<path>/tempweb</path>
-               			<port>8080</port>	
+						<port>8090</port>
 						<uriEncoding>UTF-8</uriEncoding>
-						<url>http://localhost:8080/manager</url>
+						<url>http://localhost:8090/manager</url>
 						<server>tomcat7</server>
-<!-- 						<warSourceDirectory>src/main/webapp</warSourceDirectory> -->
-<!-- 						<contextReloadable>false</contextReloadable> -->
+						<!-- <warSourceDirectory>src/main/webapp</warSourceDirectory> -->
+						<!-- <contextReloadable>false</contextReloadable> -->
 					</configuration>
 				</plugin>
-
+				<plugin>
+					<artifactId>maven-resources-plugin</artifactId>
+					<version>2.5</version>
+					<executions>
+						<execution>
+							<id>copy-xmls</id>
+							<phase>process-sources</phase>
+							<goals>
+								<goal>copy-resources</goal>
+							</goals>
+							<configuration>
+								<outputDirectory>${basedir}/target/classes</outputDirectory>
+								<resources>
+									<resource>
+										<directory>${basedir}/src/main/java</directory>
+										<includes>
+											<include>**/*.xml</include>
+										</includes>
+									</resource>
+								</resources>
+							</configuration>
+						</execution>
+					</executions>
+				</plugin>
 			</plugins>
 		</pluginManagement>
-		<resources>
-            <!--编译之后包含xml-->
-            <resource>
-                <directory>src/main/java</directory>
-                <includes>
-                    <include>**/*.xml</include>
-                </includes>
-                <filtering>true</filtering>
-            </resource>
-        </resources>
 	</build>
 
 
@@ -224,15 +237,6 @@
 			<artifactId>log4j</artifactId>
 			<version>${log4j.version}</version>
 		</dependency>
-
-
-		<!-- 格式化对象，方便输出日志 -->
-		<dependency>
-			<groupId>com.alibaba</groupId>
-			<artifactId>fastjson</artifactId>
-			<version>1.1.41</version>
-		</dependency>
-
 
 		<dependency>
 			<groupId>org.slf4j</groupId>
